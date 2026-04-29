@@ -1,4 +1,3 @@
-
 // ============================================================
 // Lab: More Details about Classes
 // Course: Object-Oriented Programming (C++)
@@ -62,7 +61,7 @@ public:
 
 // TODO 12: implement isSameSize
 bool isSameSize(const Rectangle& r1, const Rectangle& r2) {
-     if(r1.getArea()!=r2.getArea()) return false;
+     if(r1.getArea()!=r2.getArea()) {return false;}
      
      return true;
    
