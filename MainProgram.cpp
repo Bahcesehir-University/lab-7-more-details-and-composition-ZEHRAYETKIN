@@ -29,7 +29,7 @@ public:
     // TODO 4: const display()
     void display() const { std::cout << "("<<x<<","<< y<<")"; }
 
-    friend class Rectangle;
+    friend class Rectangle(double x1, double y1, double x2, double y2);
 };
 
 
@@ -43,16 +43,16 @@ public:
         : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
 
     // TODO 7: const getWidth()
-    double getWidth() const { return  abs(topLeft.getX()-bottomRight.getX()); }  // stub
+    double getWidth() const { return const topLeft.x-bottomRight.x; }  // stub
 
     // TODO 8: const getHeight()
-    double getHeight() const { return  abs(topLeft.getY()-bottomRight.getY()) ; }  // stub
+    double getHeight() const { return const topLeft.y-bottomRight.y ; }  // stub
 
     // TODO 9: const getArea()
-    double getArea() const { return  getWidth()*getHeight(); }  // stub
+    double getArea() const { return const getWidth()*getHeight(); }  // stub
 
     // TODO 10: const display()
-    void display() const {std::cout<<"the width is "<< topLeft.getX()-bottomRight.getX()<<",the heigth is "<<topLeft.getY()-bottomRight.getY()<<" ,the area is"<< getWidth()*getHeight();}
+    void display() const {std::cout<<"the width is "<< topLeft.x-bottomRight.x<<",the heigth is "<<topLeft.y-bottomRight.y<<" ,the area is"<< getWidth()*getHeight();}
 
     // TODO 11: declare isSameSize as friend function
     friend  bool isSameSize(const Rectangle& r1, const Rectangle& r2);
@@ -61,11 +61,9 @@ public:
 
 // TODO 12: implement isSameSize
 bool isSameSize(const Rectangle& r1, const Rectangle& r2) {
-     if(r1.getArea()!=r2.getArea()) {return false;}
-     
-     return true;
+     if(r1.getArea()==r2.getArea())
    
-    
+    return false;  // stub
 }
 
 
@@ -83,7 +81,7 @@ public:
     void doubleValue() {value*2;}  // stub
 
     // TODO 16: const constGetDouble() — returns value * 2 without modifying
-    int constGetDouble() { return  value*2; }  // stub — add const + fix body
+    int constGetDouble() { return const doubleValue; }  // stub — add const + fix body
 };
 
 
@@ -96,9 +94,6 @@ int main() {
         Rectangle rect1(3,4,5,6);
         Rectangle rect2(13,14,15,16);
         ConstDemo c1(8);
-        rect1.display();
-         rect2.display();
-         
     std::cout << "Complete the TODOs above!" << std::endl;
     return 0;
 
